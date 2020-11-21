@@ -34,20 +34,20 @@ public class RationalNumber extends RealNumber{
     *and denominator as this RationalNumber but reversed.
     */
     public RationalNumber reciprocal(){
-        return RationalNumber(denominator/numerator);
+        return new RationalNumber(denominator,numerator);
     }
     /**
     *@return true when the RationalNumbers have the same numerators and denominators, false otherwise.
     */
     public boolean equals(RationalNumber other){
-        return denominator==other.getDenominator && numerator==other.getNumerator;
+        return denominator==other.getDenominator() && numerator==other.getNumerator();
     }
-    
+
     /**
     *@return the value expressed as "3/4" or "8/3"
     */
     public String toString(){
-    return "0";
+        return numerator + "/" + denominator;
     }
 
     /**Calculate the GCD of two integers.
@@ -56,9 +56,10 @@ public class RationalNumber extends RealNumber{
     *@return the value of the GCD
     */
     private static int gcd(int a, int b){
-    /*use euclids method or a better one*/
-    http://sites.math.rutgers.edu/~greenfie/gs2004/euclid.html
-    return 0;
+    /*use euclids method or a better one    http://sites.math.rutgers.edu/~greenfie/gs2004/euclid.html*/
+    int first = a;
+    int second = b; 
+    while(a);
     }
 
     /**
