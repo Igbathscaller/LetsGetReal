@@ -8,5 +8,6 @@ public class Tester1 {
         System.out.println(num2.getDenominator());
         System.out.println(num1.add(num2));
         System.out.println(num1.add(num));
+        System.out.println(num.getValue());
     }
 }
