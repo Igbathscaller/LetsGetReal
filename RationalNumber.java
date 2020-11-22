@@ -55,11 +55,20 @@ public class RationalNumber extends RealNumber{
     *@param b the second integer
     *@return the value of the GCD
     */
-    private static int gcd(int a, int b){
+    public static int gcd(int a, int b){
     /*use euclids method or a better one    http://sites.math.rutgers.edu/~greenfie/gs2004/euclid.html*/
-    int small = a;
-    int large = b; 
-    while(large != small);
+    int small = Math.min(a,b);
+    int large = Math.max(a,b);
+    int temp; 
+    while (large != small){
+        large -= small;
+        if (small > large){
+            temp = large;
+            large = small;
+            small = temp;
+        }
+    }
+    return small;
     }
 
     /**
