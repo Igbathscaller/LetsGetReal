@@ -9,8 +9,17 @@ public class RationalNumber extends RealNumber{
     */
     public RationalNumber(int nume, int deno){
         super(0.0);//this value is ignored! 
+        if (deno == 0) {
+            nume = 0;
+            deno = 1;
+        }
+        if (deno < 0) {
+            nume *= -1;
+            deno *= -1;
+        }
         numerator = nume;
         denominator = deno;
+        reduce();
     }
 
     public double getValue(){
@@ -57,6 +66,10 @@ public class RationalNumber extends RealNumber{
     */
     public static int gcd(int a, int b){
     /*use euclids method or a better one    http://sites.math.rutgers.edu/~greenfie/gs2004/euclid.html*/
+    if (a == 0 || b == 0){ // checking for
+        return 1;
+    }
+    a = Math.abs(a); b = Math.abs(b);
     int small = Math.min(a,b);
     int large = Math.max(a,b);
     int temp; 
@@ -77,21 +90,23 @@ public class RationalNumber extends RealNumber{
     *reduced after construction.
     */
     private void reduce(){
-
+        int G = gcd(numerator,denominator);
+        numerator /= G;
+        denominator /= G;
     }
     /******************Operations Return a new RationalNumber!!!!****************/
     /**
     *Return a new RationalNumber that is the product of this and the other
     */
     public RationalNumber multiply(RationalNumber other){
-    return null;
+    return new RationalNumber(numerator * other.getNumerator(), denominator* other.getDenominator());
     }
 
     /**
     *Return a new RationalNumber that is the this divided by the other
     */
     public RationalNumber divide(RationalNumber other){
-    return null;
+    return new RationalNumber(numerator * other.getDenominator(), denominator * other.getNumerator());
     }
 
     /**
