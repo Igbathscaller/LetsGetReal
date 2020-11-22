@@ -66,13 +66,16 @@ public class RationalNumber extends RealNumber{
     */
     private static int gcd(int a, int b){
     /*use euclids method or a better one    http://sites.math.rutgers.edu/~greenfie/gs2004/euclid.html*/
-    if (a == 0 || b == 0){ // checking for
-        return 1;
-    }
+    
     a = Math.abs(a); b = Math.abs(b);
     int small = Math.min(a,b);
     int large = Math.max(a,b);
-    int temp; 
+    int temp;
+    
+    if (a == 0 || b == 0){ // checking for
+        return large;
+    }
+
     while (large != small){
         large -= small;
         if (small > large){
