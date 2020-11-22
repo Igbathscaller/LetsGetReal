@@ -23,7 +23,7 @@ public class RationalNumber extends RealNumber{
     }
 
     public double getValue(){
-        return numerator/denominator;
+        return (double)numerator/denominator;
     }
 
     /**
@@ -64,7 +64,7 @@ public class RationalNumber extends RealNumber{
     *@param b the second integer
     *@return the value of the GCD
     */
-    public static int gcd(int a, int b){
+    private static int gcd(int a, int b){
     /*use euclids method or a better one    http://sites.math.rutgers.edu/~greenfie/gs2004/euclid.html*/
     if (a == 0 || b == 0){ // checking for
         return 1;
