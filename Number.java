@@ -23,4 +23,37 @@ public abstract class Number {
         return Math.abs(this.getValue()-other.getValue())*100000<Math.abs(Math.max(this.getValue(),other.getValue()));
     }
 
+    /*
+    *Return a new RealNumber that has the value of:
+    *the sum of this and the other
+    */
+    public RealNumber add(Number other){
+        //other can be ANY RealNumber, including a RationalNumber
+        //or other subclasses of RealNumber (that aren't written yet)
+        return new RealNumber(this.getValue() + other.getValue());
+    }
+  
+    /*
+    *Return a new RealNumber that has the value of:
+    *the product of this and the other
+    */
+    public RealNumber multiply(Number other){
+        return new RealNumber(this.getValue() * other.getValue());
+    }
+  
+    /*
+    *Return a new RealNumber that has the value of:
+    *this divided by the other
+    */
+    public RealNumber divide(Number other){
+        return new RealNumber(this.getValue() / other.getValue());
+    }
+  
+    /*
+    *Return a new RealNumber that has the value of:
+    *this minus the other
+    */
+    public RealNumber subtract(Number other){
+        return new RealNumber(this.getValue() - other.getValue());
+    }
 }
